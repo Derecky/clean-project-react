@@ -20,7 +20,7 @@ type SutParams = {
   validationError: string
 }
 
-const history = createMemoryHistory()
+const history = createMemoryHistory({initialEntries: ['/login']})
 const makeSut = (params?: SutParams): SutTypes => {
   const validationStub = new ValidationStub()
   const authenticationSpy = new AuthenticationSpy()
@@ -161,6 +161,8 @@ describe('Login Component', () => {
     simulateValidSubmit(sut)
     await waitFor(() => sut.getByTestId('form'))
     expect(localStorage.setItem).toHaveBeenCalledWith('accessToken', authenticationSpy.account.accessToken)
+    expect(window.history.length).toBe(1)  
+    expect(window.location.pathname).toBe('/')
   })
 
   test('Should go to signup page', async () => {
@@ -170,4 +172,5 @@ describe('Login Component', () => {
     expect(window.history.length).toBe(2)  
     expect(window.location.pathname).toBe('/signup')
   })
+
 })
