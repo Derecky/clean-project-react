@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { createMemoryHistory } from 'history'
 import faker from '@faker-js/faker'
 import 'jest-localstorage-mock'
-import { render, RenderResult, fireEvent, cleanup, waitFor } from '@testing-library/react'
+import { render, RenderResult, fireEvent, waitFor } from '@testing-library/react'
 
 import { ValidationStub, AuthenticationSpy } from '@/presentation/test'
 
@@ -81,7 +81,6 @@ const testButtonIsDisabled = (sut: RenderResult, fieldName: string, isDisabled: 
 }
 
 describe('Login Component', () => {
-  afterEach(cleanup)
   beforeEach(() => {
     localStorage.clear()
   })
