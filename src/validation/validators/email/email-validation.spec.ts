@@ -2,7 +2,7 @@ import faker from "@faker-js/faker"
 import { InvalidFieldError } from "@/validation/errors"
 import { EmailValidation } from "./email-validation"
 
-const makeSut = () => new EmailValidation('email')
+const makeSut = (): EmailValidation => new EmailValidation(faker.database.column())
 
 describe('EmailValidation', () => {
   test('Should return error if email is invalid', () => {
