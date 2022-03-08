@@ -28,9 +28,9 @@ describe('ValidationBuilder', () => {
     const minLenght = faker.datatype.number()
     const validations = sut.field(field).required().email().min(minLenght).build()
     expect(validations).toEqual([
-      new RequiredFieldValidation('any_field'),
-      new EmailValidation('any_field'),
-      new MinLengthValidation('any_field', 5)
+      new RequiredFieldValidation(field),
+      new EmailValidation(field),
+      new MinLengthValidation(field, minLenght)
     ])
   })
 })
