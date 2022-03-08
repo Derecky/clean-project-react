@@ -18,7 +18,7 @@ export class ValidationBuilder {
   }
   
   email(): ValidationBuilder {
-    this.validations.push(new RequiredFieldValidation(this.fieldName))
+    this.validations.push(new EmailValidation(this.fieldName))
     return this
   }
 
