@@ -7,6 +7,6 @@ export class EmailValidation implements FieldValidation {
   
   validate(value: string): Error {
     const emailRegex = regex
-    return emailRegex.test(value) ? null : new InvalidFieldError()
+    return (!value || emailRegex.test(value)) ? null : new InvalidFieldError()
   }
 }
