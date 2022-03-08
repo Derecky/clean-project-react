@@ -9,12 +9,8 @@
         "plugin:react/recommended"
     ],
     "plugins": ["react"],
-    "parseOptions": {
-        "project": "./tsconfig.json"
-    },
     "rules": {
         "@typescript-eslint/consistent-type-definitions": "off",
-        // abaixo proíbe !variavel
         "@typescript-eslint/strict-boolean-expressions": "off",
         "@typescript-eslint/comma-spacing": "off",
         "@typescript-eslint/return-await": "off",

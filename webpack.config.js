@@ -1,6 +1,6 @@
-const path = require('path');
+const path = require('path')
 const { DefinePlugin } = require('webpack')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
   mode: 'development',
@@ -24,13 +24,13 @@ module.exports = {
     }, {
       test: /\.scss$/,
       use: [
-        { loader: 'style-loader' }, 
+        { loader: 'style-loader' },
         {
           loader: 'css-loader',
           options: {
             modules: true
           }
-        }, 
+        },
         {
           loader: 'sass-loader'
         }
@@ -39,9 +39,11 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
-    static: './public',
+    static: {
+      directory: './public'
+    },
     devMiddleware: {
-      writeToDisk: true,
+      writeToDisk: true
     }
   },
   externals: {
