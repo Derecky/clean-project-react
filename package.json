@@ -9,6 +9,7 @@
     "test:watch": "npm test -- --watch",
     "test:staged": "npm test -- --findRelatedTests",
     "test:ci": "npm test -- --coverage",
+    "test:coveralls": "npm run test:ci && coveralls < coverage/lcov.info",
     "test:clearcache": "jest --clearCache",
     "check": "npm check -up -s",
     "prepare": "husky install"
@@ -29,6 +30,7 @@
     "@typescript-eslint/experimental-utils": "^5.14.0",
     "@typescript-eslint/parser": "^5.14.0",
     "clean-webpack-plugin": "^4.0.0",
+    "coveralls": "^3.1.1",
     "css-loader": "^6.7.1",
     "eslint": "^8.10.0",
     "eslint-config-airbnb": "^19.0.4",
