@@ -1,1 +1,2 @@
 [![Build Status](https://app.travis-ci.com/Derecky/clean-project-react.svg?branch=master)](https://app.travis-ci.com/Derecky/clean-project-react)
+[![Coverage Status](https://coveralls.io/repos/github/Derecky/clean-project-react/badge.svg?branch=master)](https://coveralls.io/github/Derecky/clean-project-react?branch=master)
